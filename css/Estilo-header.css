@@ -1,0 +1,62 @@
+
+/* CSS para el header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: flex;
+    text-decoration: none;
+    
+  }
+  
+  nav li {
+    padding: 0 1em;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: rgb(255, 0, 149);
+}
+
+nav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  .pagina-actual {
+    color: red;
+  }
+  /* Fin CSS para el header */
+  
