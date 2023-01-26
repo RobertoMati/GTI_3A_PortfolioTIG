@@ -2,16 +2,15 @@
 
 body {
   margin:0;
+  font-family: 'Varela Round', sans-serif;
 }
 
 h1 {
-  font-family: 'Varela Round', sans-serif;
-  font-weight:300;
+  font-weight:600;
   letter-spacing: 2px;
   font-size:48px;
 }
 p {
-  font-family: 'Varela Round', sans-serif;
   letter-spacing: 1px;
   font-size:14px;
   color: #333333;
@@ -33,6 +32,14 @@ p {
   padding: 0;
 }
 
+.cuerpoWeb-central {
+  position:absolute;
+  top:30%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+}
+
 .flex { /*Flexbox for containers*/
   display: flex;
   justify-content: center;
@@ -43,18 +50,19 @@ p {
 .waves {
   position:relative;
   width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
+  height:18vh;
+  margin-bottom:-7px; /*Mini espacio entre footer y olas*/
   max-height:150px;
 }
 
 .content {
   position:relative;
-  height:20vh;
+  height:12vh;
+  align-items: center;
   text-align:center;
 }
 
-/* Animation */
+/* Animación olas */
 .parallax > use {
   animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
 }
@@ -82,7 +90,214 @@ p {
     transform: translate3d(85px,0,0);
   }
 }
-/*Shrinking for mobile*/
+
+/*CSS para el botón de ir a prácticas*/
+.ver-practicas{
+  --color: #fff;
+  --background: #404660;
+  --background-hover: #3A4059;
+  --background-left: #2B3044;
+  --carpeta: #F3E9CB;
+  --carpeta-inner: #BEB393;
+  --paper: #FFFFFF;
+  --paper-lines: #BBC1E1;
+  --paper-behind: #E1E6F9;
+  --lapiz-cap: #fff;
+  --lapiz-top: #275EFE;
+  --lapiz-middle: #fff;
+  --lapiz-bottom: #5C86FF;
+  --shadow: rgba(13, 15, 25, .2);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Varela Round', sans-serif;
+  position: relative;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 17px 29px 17px 69px;
+  transition: background 0.3s;
+  color: var(--color);
+  background: var(--bg, var(--background));
+}
+
+.ver-practicas > div {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 53px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 15px 0 0 15px;
+  background: var(--background-left);
+}
+
+.ver-practicas > div .carpeta {
+  width: 23px;
+  height: 27px;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+}
+
+.ver-practicas > div .carpeta .top {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.ver-practicas > div .carpeta .top svg {
+  width: 24px;
+  height: 27px;
+  display: block;
+  fill: var(--carpeta);
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease var(--fds, 0.45s);
+  transform: perspective(120px) rotateY(var(--fr, 0deg));
+}
+
+.ver-practicas > div .carpeta:before,.ver-practicas  > div .carpeta:after,
+.ver-practicas > div .carpeta .paper {
+  content: "";
+  position: absolute;
+  left: var(--l, 0);
+  top: var(--t, 0);
+  width: var(--w, 100%);
+  height: var(--h, 100%);
+  border-radius: 1px;
+  background: var(--b, var(--carpeta-inner));
+}
+
+.ver-practicas > div .carpeta:before {
+  box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.ver-practicas > div .carpeta:after,
+.ver-practicas > div .carpeta .paper {
+  --l: 1px;
+  --t: 1px;
+  --w: 21px;
+  --h: 25px;
+  --b: var(--paper-behind);
+}
+
+.ver-practicas > div .carpeta:after {
+  transform: translate(var(--pbx, 0), var(--pby, 0));
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.ver-practicas > div .carpeta .paper {
+  z-index: 1;
+  --b: var(--paper);
+}
+
+.ver-practicas > div .carpeta .paper:before, .ver-practicas > div .carpeta .paper:after {
+  content: "";
+  width: var(--wp, 14px);
+  height: 2px;
+  border-radius: 1px;
+  transform: scaleY(0.5);
+  left: 3px;
+  top: var(--tp, 3px);
+  position: absolute;
+  background: var(--paper-lines);
+  box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+}
+
+.ver-practicas > div .carpeta .paper:after {
+  --tp: 6px;
+  --wp: 10px;
+}
+
+.ver-practicas > div .lapiz {
+  height: 2px;
+  width: 3px;
+  border-radius: 1px 1px 0 0;
+  top: 8px;
+  left: 105%;
+  position: absolute;
+  z-index: 3;
+  transform-origin: 50% 19px;
+  background: var(--lapiz-cap);
+  transform: translateX(var(--pex, 0)) rotate(35deg);
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.ver-practicas > div .lapiz:before, .ver-practicas > div .lapiz:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: var(--b, linear-gradient(var(--lapiz-top) 55%, var(--lapiz-middle) 55.1%, var(--lapiz-middle) 60%, var(--lapiz-bottom) 60.1%));
+  width: var(--w, 5px);
+  height: var(--h, 20px);
+  border-radius: var(--br, 2px 2px 0 0);
+  top: var(--t, 2px);
+  left: var(--l, -1px);
+}
+
+.ver-practicas > div .lapiz:before {
+  -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+  clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+}
+
+.ver-practicas > div .lapiz:after {
+  --b: none;
+  --w: 3px;
+  --h: 6px;
+  --br: 0 2px 1px 0;
+  --t: 3px;
+  --l: 3px;
+  border-top: 1px solid var(--lapiz-top);
+  border-right: 1px solid var(--lapiz-top);
+}
+
+.ver-practicas:before, .ver-practicas:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color);
+  transform-origin: 9px 1px;
+  transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
+  top: 26px;
+  right: 16px;
+  transition: transform 0.3s;
+}
+
+.ver-practicas:after {
+  --r: 45deg;
+}
+
+.ver-practicas:hover {
+  --cx: 2px;
+  --bg: var(--background-hover);
+  --fx: -40px;
+  --fr: -60deg;
+  --fd: .15s;
+  --fds: 0s;
+  --pbx: 3px;
+  --pby: -3px;
+  --pbd: .15s;
+  --pex: -24px;
+}
+
+
+
+
+
+
+
+/*Para teléfono*/
 @media (max-width: 768px) {
   .waves {
     height:40px;
