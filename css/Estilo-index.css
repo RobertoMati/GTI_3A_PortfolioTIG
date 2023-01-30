@@ -34,7 +34,7 @@ p {
 
 .cuerpoWeb-central {
   position:absolute;
-  top:30%;
+  top: 45%;
   left:50%;
   transform:translate(-50%,-50%);
   width:100%;
@@ -91,12 +91,16 @@ p {
   }
 }
 
+.subtitulo{
+  padding-bottom: 30px;
+}
+
 /*CSS para el botón de ir a prácticas*/
 .ver-practicas{
   --color: #fff;
-  --background: #404660;
-  --background-hover: #3A4059;
-  --background-left: #2B3044;
+  --background: #4a5170;
+  --background-hover: #383e58;
+  --background-left: #33384d;
   --carpeta: #F3E9CB;
   --carpeta-inner: #BEB393;
   --paper: #FFFFFF;
@@ -310,3 +314,21 @@ p {
     font-size:24px;
   }
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+[transition-style="in:fade"] {
+  animation: fade-in 0.5s ease-in;
+}
+
+.animar{
+  animation: fade-in 0.5s ease-in;
+}
+
