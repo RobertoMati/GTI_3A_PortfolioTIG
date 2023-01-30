@@ -1,0 +1,24 @@
+.cuerpo{
+    background: rgb(7,103,186);
+    background: linear-gradient(180deg, rgba(7,103,186,1) 0%, rgba(98,255,202,1) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  [transition-style="in:fade"] {
+    animation: fade-in 0.5s ease-in;
+  }
+  
+  .animar{
+    animation: fade-in 0.5s ease-in;
+  }
+    
