@@ -32,6 +32,11 @@
     height: 98%; 
   }
 
+  .modal-lg-prac4 {
+    max-width: 70% !important;
+    height: 98%; 
+  }
+
   .modal-lg-prac9 {
     max-width: 90% !important;
     height: 98%; 
