@@ -34,20 +34,3 @@
 /* Fin CSS para las ventanas modales que mostrarán las prácticas */
 
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-[transition-style="in:fade"] {
-  animation: fade-in 0.5s ease-in;
-}
-
-.animar{
-  animation: fade-in 0.5s ease-in;
-}
-  
