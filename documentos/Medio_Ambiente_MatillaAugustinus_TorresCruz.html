@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_742b4703332bc171ab454259b9270e03 {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6edb0cc056dca6f8883f53b2f0bd3abe {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 50.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/jieter/Leaflet.Sync/L.Map.Sync.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_742b4703332bc171ab454259b9270e03" ></div>
+        
+    
+            <div class="folium-map" id="map_6edb0cc056dca6f8883f53b2f0bd3abe" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_742b4703332bc171ab454259b9270e03 = L.map(
+                "map_742b4703332bc171ab454259b9270e03",
+                {
+                    center: [39.0, -0.3],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_53f43fb6411ab1cd0732aa62343ea94f = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_742b4703332bc171ab454259b9270e03);
+        
+    
+            var tile_layer_4405236615a3953609b7d9382cda8b8f = L.tileLayer(
+                "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/af815cb15141f694b6777f47ce03bf52-5adbb2d18368f80c7345c73a81ee9c87/tiles/{z}/{x}/{y}",
+                {"attribution": "Roberto Matilla Augustinus - Claudia Torres Cruz", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_742b4703332bc171ab454259b9270e03);
+        
+    
+            var tile_layer_7d1e9fe86e712b066b1c68f4b8da0aa2 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/59a39cc6c4e05423fdcd500373df6dc6-b10a31446dfa7a76aba0b9e95bab99e1/tiles/{z}/{x}/{y}",
+                {"attribution": "Roberto Matilla Augustinus - Claudia Torres Cruz", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_742b4703332bc171ab454259b9270e03);
+        
+    
+            var layer_control_cb5eb82ab18fec25dfe0f3291cd1ce27 = {
+                base_layers : {
+                    "stamenterrain" : tile_layer_53f43fb6411ab1cd0732aa62343ea94f,
+                },
+                overlays :  {
+                    "SAVI_pre" : tile_layer_4405236615a3953609b7d9382cda8b8f,
+                    "SAVI_post" : tile_layer_7d1e9fe86e712b066b1c68f4b8da0aa2,
+                },
+            };
+            L.control.layers(
+                layer_control_cb5eb82ab18fec25dfe0f3291cd1ce27.base_layers,
+                layer_control_cb5eb82ab18fec25dfe0f3291cd1ce27.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_742b4703332bc171ab454259b9270e03);
+        
+    
+            var map_6edb0cc056dca6f8883f53b2f0bd3abe = L.map(
+                "map_6edb0cc056dca6f8883f53b2f0bd3abe",
+                {
+                    center: [39.0, -0.3],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c6890859f5549ffd3f89155d6531d9ed = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6edb0cc056dca6f8883f53b2f0bd3abe);
+        
+    
+            var tile_layer_cef8b322401de416aa4658276a5b98fd = L.tileLayer(
+                "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/6a46791d9c077c5d33990204d22f6821-594e1c3a1583210798a0cdc66c2a08ec/tiles/{z}/{x}/{y}",
+                {"attribution": "Roberto Matilla Augustinus - Claudia Torres Cruz", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6edb0cc056dca6f8883f53b2f0bd3abe);
+        
+    
+            var tile_layer_7c43815e2b77301a9f2a1919205167e4 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/156e076e5438bfc14437174df1947727-68288547eafa387f89e86b104b2fd7f3/tiles/{z}/{x}/{y}",
+                {"attribution": "Roberto Matilla Augustinus - Claudia Torres Cruz", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6edb0cc056dca6f8883f53b2f0bd3abe);
+        
+    
+            map_742b4703332bc171ab454259b9270e03.sync(map_6edb0cc056dca6f8883f53b2f0bd3abe);
+            map_6edb0cc056dca6f8883f53b2f0bd3abe.sync(map_742b4703332bc171ab454259b9270e03);
+        
+    
+            var layer_control_21920e72ce5045018e79b654713c79f8 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_c6890859f5549ffd3f89155d6531d9ed,
+                },
+                overlays :  {
+                    "EVI_pre" : tile_layer_cef8b322401de416aa4658276a5b98fd,
+                    "EVI_post" : tile_layer_7c43815e2b77301a9f2a1919205167e4,
+                },
+            };
+            L.control.layers(
+                layer_control_21920e72ce5045018e79b654713c79f8.base_layers,
+                layer_control_21920e72ce5045018e79b654713c79f8.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_6edb0cc056dca6f8883f53b2f0bd3abe);
+        
+</script>
+</html>
